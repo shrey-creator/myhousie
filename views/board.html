@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOUSIE</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <p class="roomName"></p>
+    <div class="hed">
+    <p class="count">count of numbers left:</p>
+    <p class="no">90</p>
+  </div>
+  <div class="hed">
+    <p class="count" >Previous number:</p>
+    <p class="prev">--</p>
+  </div>
+  <div class="tapper">
+      <h1 class="head">--</h1>
+      <p class="tap">Tap Here</p>
+    </div>
+   <div class="mainbody">
+    <div class="container">
+      <div class="row">
+
+      <button class="1 number">1</button>
+      <button class="2 number">2</button>
+      <button class="3 number">3</button>
+      <button class="4 number">4</button>
+      <button class="5 number">5</button>
+      <button class="6 number">6</button>
+      <button class="7 number">7</button>
+      <button class="8 number">8</button>
+      <button class="9 number">9</button>
+      <button class="10 number">10</button>
+    </div>
+    <div class="row">
+
+    <button class="11 number">11</button>
+    <button class="12 number">12</button>
+    <button class="13 number">13</button>
+    <button class="14 number">14</button>
+    <button class="15 number">15</button>
+    <button class="16 number">16</button>
+    <button class="17 number">17</button>
+    <button class="18 number">18</button>
+    <button class="19 number">19</button>
+    <button class="20 number">20</button>
+  </div>
+  <div class="row">
+
+  <button class="21 number">21</button>
+  <button class="22 number">22</button>
+  <button class="23 number">23</button>
+  <button class="24 number">24</button>
+  <button class="25 number">25</button>
+  <button class="26 number">26</button>
+  <button class="27 number">27</button>
+  <button class="28 number">28</button>
+  <button class="29 number">29</button>
+  <button class="30 number">30</button>
+</div>
+<div class="row">
+
+<button class="31 number">31</button>
+<button class="32 number">32</button>
+<button class="33 number">33</button>
+<button class="34 number">34</button>
+<button class="35 number">35</button>
+<button class="36 number">36</button>
+<button class="37 number">37</button>
+<button class="38 number">38</button>
+<button class="39 number">39</button>
+<button class="40 number">40</button>
+</div>
+<div class="row">
+
+<button class="41 number">41</button>
+<button class="42 number">42</button>
+<button class="43 number">43</button>
+<button class="44 number">44</button>
+<button class="45 number">45</button>
+<button class="46 number">46</button>
+<button class="47 number">47</button>
+<button class="48 number">48</button>
+<button class="49 number">49</button>
+<button class="50 number">50</button>
+</div>
+<div class="row">
+
+<button class="51 number">51</button>
+<button class="52 number">52</button>
+<button class="53 number">53</button>
+<button class="54 number">54</button>
+<button class="55 number">55</button>
+<button class="56 number">56</button>
+<button class="57 number">57</button>
+<button class="58 number">58</button>
+<button class="59 number">59</button>
+<button class="60 number">60</button>
+</div>
+<div class="row">
+
+<button class="61 number">61</button>
+<button class="62 number">62</button>
+<button class="63 number">63</button>
+<button class="64 number">64</button>
+<button class="65 number">65</button>
+<button class="66 number">66</button>
+<button class="67 number">67</button>
+<button class="68 number">68</button>
+<button class="69 number">69</button>
+<button class="70 number">70</button>
+</div>
+<div class="row">
+
+<button class="71 number">71</button>
+<button class="72 number">72</button>
+<button class="73 number">73</button>
+<button class="74 number">74</button>
+<button class="75 number">75</button>
+<button class="76 number">76</button>
+<button class="77 number">77</button>
+<button class="78 number">78</button>
+<button class="79 number">79</button>
+<button class="80 number">80</button>
+</div>
+<div class="row">
+
+<button class="81 number">81</button>
+<button class="82 number">82</button>
+<button class="83 number">83</button>
+<button class="84 number">84</button>
+<button class="85 number">85</button>
+<button class="86 number">86</button>
+<button class="87 number">87</button>
+<button class="88 number">88</button>
+<button class="89 number">89</button>
+<button class="90 number">90</button>
+</div>
+</div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    
+      <input class="btn info" type="submit" value="Generate Slip" onclick=" window.open('/slip','_blank')" />
+ 
+       <!-- <br>
+      <input class="btn info" type="submit" value="Chat" onclick=" window.open('/chat.html','_blank')" />
+           
+      <br>  -->
+      <div id="mario-chat">
+        <h2>Tambola Chat</h2>
+        <div id="chat-window">
+            <div id="output"></div>
+            <img id="blah"  />
+            
+        </div>
+        <!-- <input id="handle" type="text" placeholder="Handler" /> -->
+        <div class="input-icons">
+          <a href="#" onclick="ChooseImage()"> <i class="material-icons">add_a_photo</i><input type='file' id="imageFile" onchange="readURL(this)" style="display:none" /> </a>
+        <input id="message" type="text" placeholder="Message" />
+        
+        </div>
+        <button id="send">Send</button>
+    </div>
+    
+    
+        <br>
+        <br>
+        <br>
+        <br>
+    <footer>
+      <p> ALL Rights Reserverd</p>
+    </p>© Copyright 2020 Shrey</p>
+    </footer>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="join.js"></script> -->
+    <script src="js/board.js" charset="utf-8"></script>
+    
+  </body>
+  
+</html>

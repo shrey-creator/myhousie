@@ -1,0 +1,96 @@
+
+body {
+  text-align: center;
+  background-color: #DA0463;
+  background-image: url("/images/ticket.webp");
+
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+background-attachment: fixed;
+
+}
+
+
+h1 {
+  font-size: 4rem;
+  color: black;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 white;
+  text-align: center;
+
+}
+
+footer {
+  margin-top: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  color :black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+  background-color:  #43d8c9;
+}
+.container{
+  display: inline-block;
+  text-align: center;
+  background-color: black;
+  border-radius: 15px;
+  border: 10px solid #404B69;
+}
+
+
+.number {
+  position: inherit;
+    font-weight: bold;
+  outline: none;
+  border: 5px solid #404B69;
+  font-family: 'Arvo', cursive;
+  line-height: 1;
+  font-weight: 900;
+  color: #DA0463;
+  text-shadow: 3px 0 #DBEDF3;
+  border-radius: 15px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin: 5px;
+  background-color: white;
+  display: table-cell; vertical-align: middle
+}
+@media (max-width:780px)
+{
+  .number{
+    padding: 0px;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #404B69;
+    margin: 4px 0px ;
+    border-radius: 5px;
+  }
+  .container{
+    border: 5px solid #404B69;
+
+  }
+  /* .count,.no,.prev
+  {
+    font-size: 20px;
+  }
+  .head{
+    font-size: 30px;
+  } */
+}
+.lotto{
+  font-size: 20px;
+  font-weight: bold;
+  color :black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

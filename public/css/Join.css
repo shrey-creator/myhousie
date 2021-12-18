@@ -1,0 +1,93 @@
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  /* background-color: #1a1a1d; */
+  background-image: url("../images/tr.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+#root {
+  height: 100vh;
+}
+h1{
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.joinOuterContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  /* background-color: #1a1a1d; */
+}
+
+.joinInnerContainer {
+  width: 20%;
+}
+
+#joinInput {
+  border-radius: 0;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.heading {
+  color: black;
+  font-size: 2em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+
+.button {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #2979ff;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 740px) {
+  body{
+    background-repeat: no-repeat;
+  background-size: 500px 1000px;
+
+  }
+  .joinOuterContainer {
+    
+  }
+
+  .joinInnerContainer {
+    width: 90%;
+  }
+}
+
+button:focus {
+  outline: 0;
+}
+
+.all{
+  color: black;
+  font-weight: bolder;
+  text-align: center;
+  margin: 10px;
+}
+.pressed{
+  border: 2px solid red;
+}

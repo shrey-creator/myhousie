@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    
+    <title>Tambola Game ||  Kitty Housie</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="css/room.css">
+    <script>
+        const getData= async()=>{
+            const resp=await fetch('http://localhost:5000/checkRoom');
+            const data=await resp.json();
+            const finalData=JSON.parse(data);
+            console.log(finalData);
+            return finalData;
+        }
+        
+        function host() {
+            const data=getData().then(
+                
+            );
+        //     var x =  
+        //         document.getElementById("hostInput").value;
+        //     var name =  
+        //         document.getElementById("nameInput").value;
+        //         x=x.toLowerCase();
+        //         if(x !="")
+        //         {
+        //             x='room='+x;
+        //             x=x+"_name="+name;
+        //             x=x+"&type=host"
+        //   window.location.assign(`http://localhost:5000/board?${x}`);
+        //         }
+        //         else{
+        //             var element=document.getElementById("hostInput");
+        //              element.classList.add("pressed");
+                    
+        //             element.placeholder="Room name can not be empty";
+
+        //         }
+               
+          
+          
+        }
+        function join() {
+            var x =  
+                document.getElementById("hostInput").value;
+            var name =  
+                document.getElementById("nameInput").value;
+                x=x.toLowerCase();
+                if(x !="")
+                {
+                    x='room='+x;
+                    x=x+"_name="+name;
+                    x=x+"&type=join";
+          window.location.assign(`http://localhost:5000/board?${x}`);
+          
+                }
+                else{
+                    var element=document.getElementById("hostInput");
+                    
+                     element.classList.add("pressed");
+                    element.placeholder="Room name can not be empty";
+                   
+
+                }
+               
+          
+          
+        }
+        </script>
+</head>
+<body>
+    <div class="joinOuterContainer">
+        <div class="joinInnerContainer">
+            <h2 class="heading">Join/Create Room</h1>
+          <div><input type="text" placeholder="Enter your name...." id="nameInput"  /></div>
+            <div><input type="text" placeholder="Enter room name...." id="hostInput"  /></div>
+            
+            <button class="button mt-20 inli" type="submit" onclick="host()">Host Game</button>
+            <!-- <div><input type="text" placeholder="Enter room name..." id="joinInput"  /></div> -->
+            <button class="button mt-20" type="submit" onclick="join()">Join game</button>
+            
+        </div>
+        
+        
+    </div> 
+    <div class="footer">
+        <p class="all"> ALL Rights Reserverd</p>
+        <p class="all">© Copyright 2020 Shrey</p>
+    </div>
+
+    
+    
+</body>
+</html>
+
+<!-- //https://myhousie.herokuapp.com/board.html? -->
+<!-- https://www.tambola-game.com/board.html -->
