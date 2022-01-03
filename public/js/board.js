@@ -15,7 +15,7 @@ var store=[];
 /*                                            For room joining                                                              */
 if(roomtype != null)
 {
-  var socket=io.connect('https://myhousie.herokuapp.com/');
+  var socket=io.connect('https://myhousie.herokuapp.com');
 
 
 

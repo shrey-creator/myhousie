@@ -11,7 +11,7 @@
         data=[];
         var check=0;
         const getData= async()=>{
-            const resp=await fetch('http://localhost:5000/checkRoom');
+            const resp=await fetch('https://myhousie.herokuapp.com/checkRoom');
              data=await resp.json();
              return data;
         }
