@@ -8,38 +8,57 @@
    
     <link rel="stylesheet" href="css/room.css">
     <script>
+        data=[];
+        var check=0;
         const getData= async()=>{
             const resp=await fetch('http://localhost:5000/checkRoom');
-            const data=await resp.json();
-            const finalData=JSON.parse(data);
-            console.log(finalData);
-            return finalData;
+             data=await resp.json();
+             return data;
         }
-        
-        function host() {
-            const data=getData().then(
-                
-            );
-        //     var x =  
-        //         document.getElementById("hostInput").value;
-        //     var name =  
-        //         document.getElementById("nameInput").value;
-        //         x=x.toLowerCase();
-        //         if(x !="")
-        //         {
-        //             x='room='+x;
-        //             x=x+"_name="+name;
-        //             x=x+"&type=host"
-        //   window.location.assign(`http://localhost:5000/board?${x}`);
-        //         }
-        //         else{
-        //             var element=document.getElementById("hostInput");
-        //              element.classList.add("pressed");
-                    
-        //             element.placeholder="Room name can not be empty";
 
-        //         }
-               
+        getData().then((finalData)=>{
+            console.log(finalData);
+        });
+
+        const roomExist=(room)=>{
+            data.forEach(element => {
+            
+                    if(element==room)
+                    check=1;
+                });
+        }
+
+        const setRoomfield=(text)=>{
+            var element=document.getElementById("hostInput");
+            element.value='';
+            element.classList.add("pressed");
+            element.placeholder=text;
+        }
+
+        function host() {
+            var x =  document.getElementById("hostInput").value;
+                var name =   document.getElementById("nameInput").value;
+                x=x.toLowerCase();
+                if(x !="")
+                {
+                roomExist(x);
+                if(check==0)
+                {
+                    x='room='+x;
+                    x=x+"_name="+name;
+                    x=x+"&type=host"
+          window.location.assign(`https://myhousie.herokuapp.com/board?${x}`);
+                }
+                else
+                {
+                    console.log("room exist");
+                    setRoomfield("Room already exists");
+                }
+                }   
+                else{
+                    setRoomfield("Room name can not be empty");
+
+                }
           
           
         }
@@ -51,17 +70,23 @@
                 x=x.toLowerCase();
                 if(x !="")
                 {
+                    roomExist(x);
+                    if(check==0)
+                    {
+                        setRoomfield("Kindly enter valid room name");
+                    }
+                    else
+                    {
                     x='room='+x;
                     x=x+"_name="+name;
                     x=x+"&type=join";
-          window.location.assign(`http://localhost:5000/board?${x}`);
+          window.location.assign(`https://myhousie.herokuapp.com/board?${x}`);
+                    }
           
                 }
                 else{
-                    var element=document.getElementById("hostInput");
-                    
-                     element.classList.add("pressed");
-                    element.placeholder="Room name can not be empty";
+                    setRoomfield("Room name can not be empty");
+                  
                    
 
                 }
@@ -98,3 +123,5 @@
 
 <!-- //https://myhousie.herokuapp.com/board.html? -->
 <!-- https://www.tambola-game.com/board.html -->
+
+<!-- TODO: check equality while checking if room exists -->
